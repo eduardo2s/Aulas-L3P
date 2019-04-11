@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 11 17:37:11 2019
+
+@author: eduar
+"""
+
+import pandas as pd
+
+df = pd.read_csv('C:\\Users\\eduar\\Videos\\aulas\\movies.csv', encoding = "ISO-8859-1")
+
+df.to_json('C:\\Users\\eduar\\Videos\\aulas\\movies_2.json')
+
+df2 = pd.read_json('C:\\Users\\eduar\\Videos\\aulas\\movies.json')
+
+df.head()
+
+df.shape
+
+df.index
+
+df.columns
+
+df.info()
+
+df.count()
+
+df.sum()
+
+df.loc[:,'gross'].cumsum()
+
+df2 = df.set_index('company')
+
+df2.head()
+
+df.describe().transpose()
+
+df.mean()
+
+df.median()
+
+#podemos chamar uma linha pelo seu índice
+df.loc[5]
+
+#ou com um array de índices
+df.loc[[0,1,2]] 
+
+# tambem podemos chamar diretamente pela linha
+df2.loc['Paramount Pictures']
+
+# Selecionar um nome somente com as colunas de interesse
+df2.loc[['Paramount Pictures'],['country','score','star']]
+
+df.iloc[0:5,-1]
